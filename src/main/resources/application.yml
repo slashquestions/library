@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active:
+      - local
+---
+spring:
+  profiles: local
+  application:
+    name: library
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/library
+    platform: postgres
+    username: local
+    password: local
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    database: postgresql
+---
+
